@@ -45,7 +45,7 @@ body {
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 16px;
+    padding: 0 200px;
   }
 }
 
@@ -1202,7 +1202,7 @@ body {
 @media (max-width: 480px) {
   .hero {
     margin-top: 70px;
-    padding: 60px 0 2280px;
+    padding: 60px 0 280px;
   }
 
   .hero-buttons {
