@@ -268,15 +268,15 @@ body {
 }
 
 @media (max-width: 1024px) {
-  .character-card { transform: translateY(-24px); }
+  .character-card { transform: translateY(-24px); height: 420px; }
 }
 
 @media (max-width: 768px) {
-  .character-card { transform: translateY(-12px); z-index: 60; }
+  .character-card { transform: translateY(-12px); z-index: 60; height: 420px; }
 }
 
 @media (max-width: 480px) {
-  .character-card { transform: translateY(0); z-index: auto; margin-bottom: 20px; }
+  .character-card { transform: translateY(0); z-index: auto; margin-bottom: 20px; height: 380px; }
 }
 
 .hero-content {
@@ -289,11 +289,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 460px;
 }
 
 @media (max-width: 768px) {
   .hero-image {
     width: 100%;
+    min-height: 420px;
   }
 }
 /* Character / Playing Card Styles */
@@ -302,6 +304,7 @@ body {
   max-width: 48vw;
   perspective: 1200px;
   position: relative;
+  height: 460px;
 }
 
 .character-card .card {
