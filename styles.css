@@ -45,7 +45,7 @@ body {
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 200px;
+    padding: 0 12px;
   }
 }
 
@@ -276,7 +276,7 @@ body {
 }
 
 @media (max-width: 480px) {
-  .character-card { transform: translateY(0); z-index: 60; }
+  .character-card { transform: translateY(0); z-index: auto; margin-bottom: 20px; }
 }
 
 .hero-content {
@@ -1202,7 +1202,7 @@ body {
 @media (max-width: 480px) {
   .hero {
     margin-top: 70px;
-    padding: 60px 0 280px;
+    padding: 60px 0 60px;
   }
 
   .hero-buttons {
