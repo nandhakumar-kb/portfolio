@@ -4,269 +4,296 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nandha Kishore KB — Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <!-- Using Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <a href="#" class="logo">NK.</a>
-        <nav class="nav-menu">
-          <a href="#skills" class="nav-link">Skills</a>
-          <a href="#projects" class="nav-link">Projects</a>
-          <a href="#education" class="nav-link">Education</a>
-        </nav>
-        <div class="social-icons">
-          <a href="https://github.com/Nandha-Kishore-K-B" target="_blank" class="social-link" title="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://linkedin.com/in/nandhakishorekb" target="_blank" class="social-link" title="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-        </div>
-        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+  <!-- FLOATING PILL NAVIGATION -->
+  <nav class="floating-nav">
+    <div class="floating-nav-container">
+      <a href="#home" class="nav-home" aria-label="Home"><i class="fas fa-home"></i></a>
+      <div class="nav-divider"></div>
+      
+      <div class="nav-menu">
+        <a href="#skills" class="nav-link"><i class="fas fa-code"></i> Skills</a>
+        <a href="#about" class="nav-link"><i class="far fa-user"></i> About</a>
+        <a href="#education" class="nav-link"><i class="far fa-file-alt"></i> Education</a>
+        <a href="#projects" class="nav-link"><i class="fas fa-laptop-code"></i> Projects</a>
+        <a href="mailto:nandhakishorekb2005@gmail.com" class="nav-link"><i class="far fa-envelope"></i> Contact</a>
       </div>
+      
+      <a href="#" class="nav-btn nav-btn-resume"><i class="fas fa-download"></i> Resume</a>
+      
+      <button class="nav-toggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
     </div>
-  </header>
+  </nav>
 
   <main>
+    <!-- INTRO VIDEO SECTION -->
+    <section class="intro-showcase" id="intro" style="position: relative; width: 100%; height: auto; max-height: 80vh; overflow: hidden; display: flex; justify-content: center; align-items: center; background: #000;">
+      <video id="main-intro-video" autoplay muted playsinline style="max-width: 100%; max-height: 100%;">
+        <source src="assets/intro.mp4" type="video/mp4">
+      </video>
+      
+      <!-- CUSTOM VIDEO CONTROLS -->
+      <div class="custom-video-controls">
+        <button id="video-play-pause" class="video-ctrl-btn" aria-label="Play/Pause"><i class="fas fa-pause"></i></button>
+        <button id="video-mute" class="video-ctrl-btn" aria-label="Toggle Sound"><i class="fas fa-volume-mute"></i></button>
+      </div>
+
+      <!-- RESTART BUTTON OVERLAY -->
+      <div id="video-restart-overlay" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 10; justify-content: center; align-items: center;">
+        <button id="restart-video-btn" class="nav-btn nav-btn-resume" style="border: none; cursor: pointer; padding: 1rem 2rem; font-size: 1.2rem;">
+          <i class="fas fa-redo"></i> Play Again
+        </button>
+      </div>
+    </section>
+
     <!-- HERO SECTION -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <div class="hero-badge">→ SOFTWARE DEVELOPER</div>
-          <h1 class="hero-title">Nandha Kishore<br>KB</h1>
-          <p class="hero-description">Specializing in scalable, multi-threaded applications. I translate complex logic into robust enterprise-level systems using Core Java and standard design patterns.</p>
-          <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">View My Work</a>
-            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-            <a href="NandhaKishoreKB23CS110.pdf" class="btn btn-secondary" download>Download Resume</a>
+    <section class="hero" id="home">
+      <div class="container hero-container">
+        <div class="hero-layout">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span class="code-icon">&lt;/&gt;</span> SOFTWARE DEVELOPER
+            </div>
+            <h1 class="hero-title">
+              Hi, I'm <span class="highlight-blue">Nandha<br>Kishore.</span>
+            </h1>
+            <p class="hero-description">
+              I build scalable, multi-threaded backend applications & REST APIs. Passionate about translating complex logic into real-world productivity solutions using <strong>Java, Spring Boot, and PostgreSQL</strong>.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-secondary-light">View Projects &rarr;</a>
+              <a href="assets/resume.pdf" class="btn btn-tertiary" download>
+                <i class="fas fa-file-pdf"></i> Resume
+              </a>
+              <a href="https://github.com/Nandha-Kishore-K-B" target="_blank" class="btn btn-tertiary">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+            <div class="hero-social">
+              <a href="https://linkedin.com/in/nandhakishorekb" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://leetcode.com/Nandha-Kishore-K-B" target="_blank" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+              <a href="https://hackerrank.com/NandhakishoreKB" target="_blank" aria-label="HackerRank"><i class="fab fa-hackerrank"></i></a>
+              <a href="mailto:nandhakishorekb2005@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
           </div>
-        </div>
-        <div class="hero-image">
-          <div class="character-card" aria-hidden="true">
-            <div class="card card-back"></div>
-            <div class="card card-front">
-              <img src="photo.jpeg" alt="Nandha Kishore KB">
-              <div class="card-meta">
-                <span class="card-rank">NK</span>
-                <span class="card-role">Software Developer</span>
-              </div>
+          <div class="hero-image-wrapper">
+            <div class="flipper">
+              <img src="photo.jpeg" alt="Nandha Kishore KB" class="profile-photo front">
+              <img src="assets/logo.png" alt="NK Logo" class="profile-photo back">
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CAPABILITIES SECTION -->
-    <section id="capabilities" class="section capabilities-section">
-      <div class="container">
-        <div class="capabilities-grid">
-          <div class="capability-card">
-            <div class="capability-icon">
-              <i class="fas fa-code"></i>
-            </div>
-            <h3>Clean Architecture</h3>
-            <p>Expertise in applying MVC, DAO, and Factory patterns for maintainable codebases.</p>
-          </div>
-          <div class="capability-card">
-            <div class="capability-icon">
-              <i class="fas fa-microchip"></i>
-            </div>
-            <h3>Systems Logic</h3>
-            <p>Deep understanding of multi-threading, concurrency, and core OS principles.</p>
-          </div>
-          <div class="capability-card">
-            <div class="capability-icon">
-              <i class="fas fa-bookmark"></i>
-            </div>
-            <h3>Problem Solver</h3>
-            <p>400+ problems solved on LeetCode/HackerRank with 9.19 CGPA academic excellence.</p>
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+      <div class="container about-container">
+        <div class="about-text">
+          <h2 class="section-title"><span class="chapter-label">Chapter I</span><br>About Me</h2>
+          <div class="title-underline"></div>
+          <p>
+            I am a Software Developer specializing in core backend technologies. I have demonstrated expertise in Data Structures & Algorithms (DSA), object-oriented programming, and applying standard design patterns to architect robust, multi-tenant enterprise systems.
+          </p>
+          <p>
+            I actively focus on system design principles, aiming to write clean, maintainable code that scales. Beyond coding, I am an active open-source contributor and a content creator producing educational analyses of self-improvement literature.
+          </p>
+        </div>
+        <div class="about-stats">
+          <div class="stats-card">
+            <h3 class="stats-title"><i class="fas fa-chart-line"></i> Fast Facts</h3>
+            <ul class="stats-list">
+              <li><i class="fas fa-check-circle"></i> <span>Solved <strong>300+ problems</strong> on LeetCode and HackerRank.</span></li>
+              <li><i class="fas fa-check-circle"></i> <span><strong>CGPA of 9.19</strong> in B.E. Computer Science and Engineering.</span></li>
+              <li><i class="fas fa-check-circle"></i> <span>Certified in <strong>GitHub Foundations</strong> and Docker.</span></li>
+              <li><i class="fas fa-check-circle"></i> <span>Open Source enthusiast with multiple clean-code Java projects.</span></li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TECHNICAL ARSENAL -->
-    <section id="skills" class="section arsenal-section">
+    <!-- TECHNICAL ARSENAL SECTION -->
+    <section class="arsenal" id="skills">
       <div class="container">
-        <h2 class="section-title">
-          <i class="fas fa-box"></i>
-          Technical Arsenal
-        </h2>
+        <h2 class="section-title text-center"><span class="chapter-label">Chapter II</span><br>Technical Arsenal</h2>
+        <div class="title-underline center-underline"></div>
         
+        <!-- SEPARATE VIDEO BLOCK -->
+        <div class="arsenal-video-block">
+          <video id="skills-video" autoplay loop muted playsinline>
+            <source src="assets/skills.mp4" type="video/mp4">
+          </video>
+          <!-- CUSTOM SKILLS VIDEO CONTROLS -->
+          <div class="custom-video-controls">
+            <button id="skills-play-pause" class="video-ctrl-btn" aria-label="Play/Pause"><i class="fas fa-pause"></i></button>
+            <button id="skills-mute" class="video-ctrl-btn" aria-label="Toggle Sound"><i class="fas fa-volume-mute"></i></button>
+          </div>
+        </div>
+
         <div class="arsenal-grid">
-          <div class="arsenal-category category-languages">
-            <h4 class="arsenal-label">LANGUAGES</h4>
-            <div class="tag-group">
+          <!-- Card 1 -->
+          <div class="arsenal-card">
+            <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+            <h3 class="card-title">Languages</h3>
+            <div class="tags">
               <span class="tag">Java</span>
               <span class="tag">C</span>
               <span class="tag">Python</span>
               <span class="tag">SQL</span>
             </div>
           </div>
-          
-          <div class="arsenal-category category-core">
-            <h4 class="arsenal-label">CORE CS</h4>
-            <div class="tag-group">
-              <span class="tag">DSA</span>
-              <span class="tag">OOPS</span>
-              <span class="tag">DBMS</span>
-              <span class="tag">Operating Systems</span>
-              <span class="tag">Computer Networks</span>
-            </div>
-          </div>
-          
-          <div class="arsenal-category category-patterns">
-            <h4 class="arsenal-label">PATTERNS</h4>
-            <div class="tag-group">
-              <span class="tag">Singleton</span>
-              <span class="tag">Factory</span>
-              <span class="tag">DAO</span>
-              <span class="tag">MVC</span>
-            </div>
-          </div>
-          
-          <div class="arsenal-category category-tools">
-            <h4 class="arsenal-label">TOOLS & TECH</h4>
-            <div class="tag-group">
+          <!-- Card 2 -->
+          <div class="arsenal-card">
+            <div class="card-icon"><i class="fas fa-server"></i></div>
+            <h3 class="card-title">Technologies</h3>
+            <div class="tags">
+              <span class="tag outlined">Spring Boot</span>
+              <span class="tag outlined">Spring Security</span>
+              <span class="tag outlined">Hibernate</span>
+              <span class="tag outlined">REST APIs</span>
               <span class="tag">JDBC</span>
+              <span class="tag">PostgreSQL</span>
               <span class="tag">SQLite</span>
-              <span class="tag">Collections Framework</span>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="arsenal-card">
+            <div class="card-icon"><i class="fab fa-docker"></i></div>
+            <h3 class="card-title">Tools & DevOps</h3>
+            <div class="tags">
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Postman</span>
+              <span class="tag">Maven</span>
+              <span class="tag">VS Code</span>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="arsenal-card">
+            <div class="card-icon"><i class="fas fa-cubes"></i></div>
+            <h3 class="card-title">Architecture & Core</h3>
+            <div class="tags">
+              <span class="tag purple">Multi-Tenant</span>
+              <span class="tag purple">MVC & DAO</span>
+              <span class="tag">Design Patterns</span>
+              <span class="tag">DSA & OOPS</span>
+              <span class="tag">DBMS & OS</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FEATURED PROJECTS -->
-    <section id="projects" class="section projects-section">
+    <!-- FEATURED PROJECTS SECTION -->
+    <section class="projects" id="projects">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">
-            <i class="fas fa-arrow-right"></i>
-            Featured Projects
-          </h2>
-          <p class="section-subtitle">Scalable Java applications with robust data persistence.</p>
-        </div>
-        
-        <div class="projects-grid">
+        <h2 class="section-title text-center"><span class="chapter-label">Chapter III</span><br>Featured Projects</h2>
+        <div class="title-underline center-underline"></div>
+        <p class="section-subtitle text-center">
+          Architectural blueprints and backend systems engineered for scalability,<br>security, and performance.
+        </p>
+
+        <div class="project-list">
+          <!-- Project 1 -->
           <div class="project-card">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fas fa-database"></i>
-              </div>
-              <div class="project-dates">Dec 2025 - Jan 2026</div>
+            <div class="project-image">
+              <img src="assets/saas_billing_architecture_1781496391023.png" alt="Mini SaaS Billing REST API Architecture">
             </div>
-            
-            <h3 class="project-title">Wisdom Journal & Habit Tracker</h3>
-            <p class="project-tech">Java, SQLite, JDBC, MVC, DAO</p>
-            
-            <p class="project-description">A productivity ecosystem featuring custom streak-calculation algorithms and weighted-average habit scoring.</p>
-            
-            <ul class="project-highlights">
-              <li>Engineered real-time 'Habit Score' using 30-day historical data</li>
-              <li>Implemented Singleton/Factory patterns for secure DB management</li>
-              <li>Deployed to 20+ active users with 85% reported productivity gain</li>
-            </ul>
-
-            <a class="project-link" href="https://github.com/Nandha-Kishore-K-B" target="_blank">View on GitHub →</a>
+            <div class="project-content">
+              <div class="project-header">
+                <div>
+                  <h3 class="project-title">Mini SaaS Billing REST API</h3>
+                  <p class="project-date">Mar 2026 - Jun 2026</p>
+                </div>
+                <div class="project-tech">
+                  <span class="tech-tag">JAVA</span>
+                  <span class="tech-tag highlighted">SPRING BOOT</span>
+                  <span class="tech-tag">POSTGRESQL</span>
+                  <span class="tech-tag cyan">DOCKER</span>
+                </div>
+              </div>
+              <ul class="project-bullets">
+                <li><i class="fas fa-arrow-right list-arrow"></i> <span><strong>Architected a secure, multi-tenant SaaS REST API</strong> utilizing Spring Security for Role-Based Access Control (RBAC) and Hibernate Session Filters to ensure strict data isolation across corporate clients.</span></li>
+                <li><i class="fas fa-arrow-right list-arrow"></i> <span><strong>Optimized system performance</strong> and response times by engineering asynchronous background PDF generation (Spring @Async, Thymeleaf) and resolving JPA "N+1" query issues via JOIN FETCH eager loading.</span></li>
+                <li><i class="fas fa-arrow-right list-arrow"></i> <span><strong>Streamlined deployment</strong> and database management by automating schema migrations with Flyway and containerizing the PostgreSQL environment using Docker.</span></li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://github.com/Nandha-Kishore-K-B/MiniBillingApplication" target="_blank" class="btn btn-tertiary btn-small">
+                  <i class="fab fa-github"></i> Source Code
+                </a>
+              </div>
+            </div>
           </div>
-
+          <!-- Project 2 -->
           <div class="project-card">
-            <div class="project-header">
-              <div class="project-icon">
-                <i class="fas fa-database"></i>
-              </div>
-              <div class="project-dates">Jan 2026 - Feb 2026</div>
+            <div class="project-image">
+              <img src="assets/wealthwise_finance_dashboard_1781496404755.png" alt="WealthWise Behavioral Finance Tracker">
             </div>
-            
-            <h3 class="project-title">WealthWise Behavioral Finance</h3>
-            <p class="project-tech">Java, SQLite, JDBC, MVC</p>
-            
-            <p class="project-description">Financial tracking tool focusing on wealth-building metrics and behavioral finance principles.</p>
-            
-            <ul class="project-highlights">
-              <li>Dynamic 'Fastlane Score' for financial independence projections</li>
-              <li>Experience Value Calculator to optimize lifetime spending</li>
-              <li>Drove 10x increase in savings rates for beta users</li>
-            </ul>
-
-            <a class="project-link" href="https://github.com/Nandha-Kishore-K-B" target="_blank">View on GitHub →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EDUCATION & BEYOND CODE -->
-    <section id="education" class="section education-section">
-      <div class="container">
-        <div class="education-grid">
-          <!-- Education Timeline -->
-          <div class="education-column">
-            <div class="section-header">
-              <h2 class="section-title">
-                <i class="fas fa-book"></i>
-                Education
-              </h2>
-            </div>
-            
-            <div class="timeline">
-              <div class="timeline-item">
-                <div class="timeline-marker">
-                  <span class="timeline-dot"></span>
+            <div class="project-content">
+              <div class="project-header">
+                <div>
+                  <h3 class="project-title">WealthWise Behavioral Finance Tracker</h3>
+                  <p class="project-date">Jan 2026 - Feb 2026</p>
                 </div>
-                <div class="timeline-content">
-                  <p class="timeline-date">SEP 2023 - PRESENT</p>
-                  <h4>KPR Institute of Engineering and Technology</h4>
-                  <p class="timeline-degree">B.E. in Computer Science and Engineering</p>
-                  <p class="timeline-info">CGPA: 9.19</p>
-                  <p class="timeline-location">Coimbatore, India</p>
+                <div class="project-tech">
+                  <span class="tech-tag">JAVA</span>
+                  <span class="tech-tag">SQLITE</span>
+                  <span class="tech-tag">JDBC</span>
+                  <span class="tech-tag purple">MVC ARCHITECTURE</span>
                 </div>
               </div>
-              
-              <div class="timeline-item">
-                <div class="timeline-marker">
-                  <span class="timeline-dot"></span>
-                </div>
-                <div class="timeline-content">
-                  <p class="timeline-date">JUN 2021 - APR 2023</p>
-                  <h4>Einsstein Matric Higher Secondary School</h4>
-                  <p class="timeline-degree">Higher Secondary Education</p>
-                  <p class="timeline-info">Percentage: 98.5%</p>
-                  <p class="timeline-location">Namakkal, India</p>
-                </div>
+              <ul class="project-bullets">
+                <li><i class="fas fa-arrow-right list-arrow"></i> <span><strong>Developed a personal finance application</strong> to translate wealth-building principles into actionable metrics by tracking and categorizing income streams across functional quadrants.</span></li>
+                <li><i class="fas fa-arrow-right list-arrow"></i> <span><strong>Engineered complex financial algorithms</strong> in Java, including a dynamic 'Fastlane Score' for financial independence, Future Value time-to-goal projections, and lifestyle inflation detection.</span></li>
+                <li><i class="fas fa-arrow-right list-arrow"></i> <span>Achieved strong user outcomes during beta testing (15 users), driving a <strong>10x increase in savings rates</strong> for highly active users through algorithmic bucket recommendations.</span></li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://github.com/Nandha-Kishore-K-B/wealthwise-behavioral-finance" target="_blank" class="btn btn-tertiary btn-small">
+                  <i class="fab fa-github"></i> Source Code
+                </a>
               </div>
             </div>
           </div>
 
-          <!-- Beyond Code Achievements -->
-          <div class="achievements-column">
-            <div class="section-header">
-              <h2 class="section-title">
-                <i class="fas fa-star"></i>
-                Beyond Code
-              </h2>
+          <!-- Project 3 -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="assets/wisdom_journal_app_1781496418877.png" alt="Wisdom Journal App">
             </div>
-            
-            <div class="achievements-grid">
-              <div class="achievement-card">
-                <div class="achievement-icon">
-                  <i class="fas fa-file"></i>
+            <div class="project-content">
+              <div class="project-header">
+                <div>
+                  <h3 class="project-title">Wisdom Journal & Habit Tracker</h3>
+                  <p class="project-date">Dec 2025 - Jan 2026</p>
                 </div>
-                <h4>Content Creation</h4>
-                <p>Founder of "The Backbenchers' Book Club", analyzing self-improvement principles and their practical applications.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">JAVA</span>
+                  <span class="tech-tag">JDBC</span>
+                  <span class="tech-tag purple">DAO & MVC</span>
+                  <span class="tech-tag green">SINGLETON PATTERN</span>
+                </div>
               </div>
-              
-              <div class="achievement-card">
-                <div class="achievement-icon">
-                  <i class="fas fa-users"></i>
-                </div>
-                <h4>Open Source</h4>
-                <p>Active contributor on GitHub with multiple projects demonstrating clean code principles and architectural patterns.</p>
+              <ul class="project-bullets">
+                <li><i class="fas fa-arrow-right list-arrow"></i> <span><strong>Developed a productivity application</strong> utilizing the MVC architecture and DAO design pattern to track habits, calculate streaks, and maintain daily journals.</span></li>
+                <li><i class="fas fa-arrow-right list-arrow"></i> <span><strong>Engineered custom streak-calculation algorithms</strong> that handle dynamic scheduling and a real-time 'Habit Score' algorithm utilizing weighted averages over 30-day historical data.</span></li>
+                <li><i class="fas fa-arrow-right list-arrow"></i> <span>Deployed to 20+ active users, achieving an <strong>85% reported improvement in productivity</strong> and successfully tracking user habit streaks exceeding 100 consecutive days.</span></li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://github.com/Nandha-Kishore-K-B/wisdom-journal" target="_blank" class="btn btn-tertiary btn-small">
+                  <i class="fab fa-github"></i> Source Code
+                </a>
               </div>
             </div>
           </div>
@@ -274,49 +301,115 @@
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="section contact-section">
+    <!-- EDUCATION & CERTIFICATIONS SECTION -->
+    <section class="education" id="education">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Let's Connect</h2>
-          <p class="contact-intro">Have a project in mind or want to discuss opportunities?</p>
-        </div>
+        <h2 class="section-title text-center"><span class="chapter-label">Chapter IV</span><br>Education & Certifications</h2>
+        <div class="title-underline center-underline"></div>
         
-        <div class="contact-methods">
-          <a href="mailto:nandhakishorekb2005@gmail.com" class="contact-card">
-            <i class="fas fa-envelope"></i>
-            <h4>Email</h4>
-            <p>nandhakishorekb2005@gmail.com</p>
-          </a>
-          
-          <a href="tel:+917200962020" class="contact-card">
-            <i class="fas fa-phone"></i>
-            <h4>Phone</h4>
-            <p>+91 7200962020</p>
-          </a>
-          
-          <a href="https://github.com/Nandha-Kishore-K-B" target="_blank" class="contact-card">
-            <i class="fab fa-github"></i>
-            <h4>GitHub</h4>
-            <p>github.com/Nandha-Kishore-K-B</p>
-          </a>
-          
-          <a href="https://linkedin.com/in/nandhakishorekb" target="_blank" class="contact-card">
-            <i class="fab fa-linkedin"></i>
-            <h4>LinkedIn</h4>
-            <p>linkedin.com/in/nandhakishorekb</p>
-          </a>
+        <div class="edu-grid">
+          <!-- Academic Journey -->
+          <div class="edu-column">
+            <h3 class="column-title"><i class="fas fa-graduation-cap"></i> Academic Journey</h3>
+            <div class="timeline-container">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                  <h4 class="timeline-title">B.E. in Computer Science and Engineering</h4>
+                  <p class="timeline-date">Sep 2023 - May 2027</p>
+                  <p class="timeline-desc">KPR Institute of Engineering and Technology, Coimbatore</p>
+                  <span class="timeline-badge">CGPA: 9.19</span>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                  <h4 class="timeline-title">Higher Secondary Education</h4>
+                  <p class="timeline-date">Jun 2021 - Apr 2023</p>
+                  <p class="timeline-desc">Einsstein Matric Higher Secondary School, Namakkal</p>
+                  <span class="timeline-badge">Percentage: 98.5%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications & Interests -->
+          <div class="edu-column">
+            <h3 class="column-title"><i class="fas fa-medal"></i> Certifications & Interests</h3>
+            <div class="cert-list">
+              <!-- Cert 1 -->
+              <div class="cert-card">
+                <div class="cert-icon"><i class="fab fa-github"></i></div>
+                <div class="cert-details">
+                  <h4 class="cert-title">GitHub Foundations</h4>
+                  <p class="cert-issuer">Issued by GitHub</p>
+                </div>
+              </div>
+              <!-- Cert 2 -->
+              <div class="cert-card">
+                <div class="cert-icon"><i class="fab fa-docker"></i></div>
+                <div class="cert-details">
+                  <h4 class="cert-title">Docker For Absolute Beginners</h4>
+                  <p class="cert-issuer">KodeKloud</p>
+                </div>
+              </div>
+              <!-- Cert 3 -->
+              <div class="cert-card">
+                <div class="cert-icon"><i class="fab fa-linkedin-in"></i></div>
+                <div class="cert-details">
+                  <h4 class="cert-title">Project Management</h4>
+                  <p class="cert-issuer">LinkedIn Learning</p>
+                </div>
+              </div>
+              <!-- Cert 4 -->
+              <div class="cert-card">
+                <div class="cert-icon red-icon"><i class="fas fa-video"></i></div>
+                <div class="cert-details">
+                  <h4 class="cert-title">Content Creator</h4>
+                  <p class="cert-issuer">Producing educational video analyses of self-improvement books.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  </main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p style="margin-top:18px">&copy; 2026 Nandha Kishore KB. Crafted with precision and passion.</p>
+  </main>  <!-- FOOTER -->
+  <footer class="footer-new" id="contact">
+    <video autoplay loop muted playsinline class="footer-bg-video">
+      <source src="assets/birds.mp4" type="video/mp4">
+    </video>
+    <div class="container footer-container" style="position: relative; z-index: 2;">
+      <div class="footer-header">
+        <span class="footer-subtitle">GET IN TOUCH</span>
+        <h2 class="footer-title">Contact.</h2>
+      </div>
+      <div class="contact-cards">
+        <a href="https://linkedin.com/in/nandhakishorekb" target="_blank" class="contact-card metallic-card">
+          <div class="card-icon"><i class="fab fa-linkedin-in"></i></div>
+          <h3>LinkedIn</h3>
+          <p>Connect</p>
+        </a>
+        <a href="mailto:nandhakishorekb2005@gmail.com" class="contact-card metallic-card">
+          <div class="card-icon"><i class="far fa-envelope"></i></div>
+          <h3>Email</h3>
+          <p>Message me</p>
+        </a>
+        <a href="https://github.com/Nandha-Kishore-K-B" target="_blank" class="contact-card metallic-card">
+          <div class="card-icon"><i class="fab fa-github"></i></div>
+          <h3>GitHub</h3>
+          <p>View code</p>
+        </a>
+      </div>
     </div>
   </footer>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="lightbox-modal">
+    <button class="lightbox-close" aria-label="Close Lightbox">&times;</button>
+    <img class="lightbox-content" src="" alt="Expanded architecture diagram">
+  </div>
 
   <script src="script.js"></script>
 </body>
