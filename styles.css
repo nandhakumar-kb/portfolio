@@ -1042,7 +1042,85 @@ ul {
   .footer-title {
     font-size: 3rem;
   }
+
+  .project-card {
+    min-width: 85vw;
+  }
+
+  .floating-nav-container {
+    padding: 0.6rem 1rem;
+    gap: 0.8rem;
+  }
+
+  .nav-btn-resume {
+    display: none;
+  }
 }
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .hero-image-wrapper {
+    width: 250px;
+    height: 250px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .stats-card, .cert-card, .timeline-card {
+    padding: 1rem;
+  }
+
+  .timeline-container {
+    padding-left: 1.5rem;
+  }
+  
+  .timeline-dot {
+    left: -1.5rem;
+  }
+  
+  .project-header {
+    align-items: flex-start;
+  }
+
+  .custom-video-controls {
+    bottom: 1rem;
+    right: 1rem;
+    gap: 0.5rem;
+  }
+
+  .video-ctrl-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+
+  .contact-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .contact-card .card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
+
 
 /* --- OVERHAUL STYLES (Animations, Video, Cursor, Audio Toggle) --- */
 
@@ -1187,7 +1265,7 @@ body {
     max-width: 95%;
     max-height: 95%;
   }
-}
+
 
 /* --- GAMIFICATION & Smoothness --- */
 
